@@ -1,0 +1,28 @@
+settings:
+  legacy:
+    force: false
+    interval: 0s
+schema:
+  -
+    name: app
+    path: .
+    commands:
+      install:
+        status: true
+        dir: .
+      build:
+        status: true
+        dir: .
+      run:
+        status: true
+        dir: .
+    watcher:
+      extensions:
+        - go
+      paths:
+        - /
+      ignored_paths:
+        - .git
+        - .realize
+        - vendor
+        - imglib

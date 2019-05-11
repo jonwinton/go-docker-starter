@@ -1,0 +1,17 @@
+FROM golang
+
+COPY . /go/src/github.com/jonwinton/go-docker-starter
+WORKDIR /go/src/github.com/jonwinton/go-docker-starter
+
+RUN go get ./
+RUN go build
+
+# Add realize
+RUN go get github.com/tockins/realize
+# This file is mounted in through docker-compose
+# to keep the app directory a little more clean
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["realize", "start"]
+
+EXPOSE 8080

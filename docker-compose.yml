@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: ./app/
+      dockerfile: ../docker/Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./docker/entrypoint.dev.sh:/entrypoint.sh"
+      - "./app:/go/src/github.com/jonwinton/go-docker-starter"
+    env_file:
+      - ./docker/dev.env
