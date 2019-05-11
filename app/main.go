@@ -8,7 +8,7 @@ import (
   "github.com/labstack/echo/middleware"
 )
 
-var PORT = os.Getenv("PORTO")
+var PORT = os.Getenv("PORT")
 
 // Quick response object
 type GenericResponse struct {
